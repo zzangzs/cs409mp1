@@ -1,13 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MP1</title>
-    </head>
-    <body>
-        <h1>Hello World! Welcome to MP1!</h1>
-        <img src="assets/image.jpg">
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Zisu Jiang's embedded systems and computer engineering portfolio."
+    />
+    <title>Zisu Jiang | Embedded Systems Portfolio</title>
+  </head>
+  <body>
+    <nav class="navbar" aria-label="Main navigation">
+      <div class="nav-content">
+        <a class="logo nav-link" href="#home" aria-label="Go to home">ZJ.</a>
+        <div class="nav-links">
+          <a class="nav-link active" href="#home">Home</a>
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#projects">Projects</a>
+          <a class="nav-link" href="#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <header id="home" class="hero page-section">
+      <div class="hero-content">
+        <p class="eyebrow">Hello, I am</p>
+        <h1>Zisu Jiang</h1>
+        <p class="hero-title">
+          Computer Engineering Graduate &amp; Computer Science Student
+        </p>
+        <p class="hero-copy">
+          I build embedded systems, low-level software, and GPU-accelerated
+          programs.
+        </p>
+        <a class="button" href="#projects">See my work</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="about" class="about page-section">
+        <div class="section-content">
+          <p class="eyebrow">A little background</p>
+          <h2>About me</h2>
+          <div class="about-intro">
+            <img
+              class="profile-photo"
+              src="assets/image.jpg"
+              alt="Placeholder profile photo"
+            />
+            <p>
+              I am a Master of Computer Science student at the University of
+              Illinois Urbana-Champaign. My work focuses on embedded software,
+              firmware, FPGA systems, and hardware-software integration.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <article class="info-card">
+              <span class="card-number">01</span>
+              <h3>Education</h3>
+              <p>
+                UIUC<br />MCS · Expected May 2028<br />B.S. Computer Engineering
+                · May 2026
+              </p>
+            </article>
+            <article class="info-card">
+              <span class="card-number">02</span>
+              <h3>Skills</h3>
+              <p>C/C++, CUDA, Python, Verilog, Linux, and Assembly</p>
+            </article>
+            <article class="info-card">
+              <span class="card-number">03</span>
+              <h3>Focus</h3>
+              <p>
+                Embedded software, firmware, FPGA, communication protocols, and
+                hardware-software integration
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="projects page-section">
+        <div class="section-content">
+          <p class="eyebrow">Selected work</p>
+          <h2>Projects</h2>
+
+          <div class="carousel" aria-label="Project carousel">
+            <button
+              class="carousel-button previous"
+              type="button"
+              aria-label="Previous project"
+            >
+              &#8592;
+            </button>
+
+            <div class="carousel-window">
+              <div class="carousel-track">
+                <article class="project-slide" aria-hidden="false">
+                  <div
+                    class="project-visual project-one"
+                    role="img"
+                    aria-label="BattleBot concept image placeholder"
+                  >
+                    <img
+                      src="assets/battlebot.png"
+                      alt="Scorpion-Lift BattleBot concept"
+                    />
+                  </div>
+                  <div class="project-details">
+                    <p class="project-type">C++, Python, ESP32</p>
+                    <h3>Scorpion-Lift BattleBot</h3>
+                    <p>
+                      A Wi-Fi controlled combat robot with motor control,
+                      telemetry, and a hardware failsafe.
+                    </p>
+                    <button
+                      class="text-button modal-open"
+                      type="button"
+                      data-modal="modal-one"
+                    >
+                      Read more <span aria-hidden="true">&#8599;</span>
+                    </button>
+                  </div>
+                </article>
+
+                <article class="project-slide" aria-hidden="true">
+                  <div
+                    class="project-visual project-two"
+                    role="img"
+                    aria-label="Self-balancing biped concept image placeholder"
+                  >
+                    <img
+                      src="assets/biped.png"
+                      alt="Self-Balancing Biped concept"
+                    />
+                  </div>
+                  <div class="project-details">
+                    <p class="project-type">C, ESP32, Embedded Systems</p>
+                    <h3>Self-Balancing Biped</h3>
+                    <p>
+                      A two-legged robot that uses real-time feedback control to
+                      maintain dynamic stability.
+                    </p>
+                    <button
+                      class="text-button modal-open"
+                      type="button"
+                      data-modal="modal-two"
+                    >
+                      Read more <span aria-hidden="true">&#8599;</span>
+                    </button>
+                  </div>
+                </article>
+
+                <article class="project-slide" aria-hidden="true">
+                  <div
+                    class="project-visual project-three"
+                    role="img"
+                    aria-label="FPGA Apple II concept image placeholder"
+                  >
+                    <img
+                      src="assets/appleII.png"
+                      alt="FPGA Apple II reconstruction concept"
+                    />
+                  </div>
+                  <div class="project-details">
+                    <p class="project-type">SystemVerilog, VHDL</p>
+                    <h3>FPGA Apple ][ Reconstruction</h3>
+                    <p>
+                      A reconstruction of the legacy Apple ][ architecture on an
+                      Intel DE10-Lite FPGA.
+                    </p>
+                    <button
+                      class="text-button modal-open"
+                      type="button"
+                      data-modal="modal-three"
+                    >
+                      Read more <span aria-hidden="true">&#8599;</span>
+                    </button>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <button
+              class="carousel-button next"
+              type="button"
+              aria-label="Next project"
+            >
+              &#8594;
+            </button>
+          </div>
+          <p class="slide-count" aria-live="polite">01 / 03</p>
+        </div>
+      </section>
+
+      <section class="work-break page-section" aria-label="Working style">
+        <div class="break-content">
+          <p class="eyebrow">My focus</p>
+          <h2>Hardware meets software.</h2>
+        </div>
+      </section>
+
+      <section id="media" class="media-section page-section">
+        <div class="section-content media-grid">
+          <div>
+            <p class="eyebrow">Project demo</p>
+            <h2>Scorpion-Lift BattleBot</h2>
+            <p>
+              This video demonstrates the BattleBot's wireless controls,
+              movement, lift mechanism, and system testing.
+            </p>
+          </div>
+          <video controls preload="metadata" aria-label="BattleBot demo video">
+            <!-- webpackIgnore: true -->
+            <source src="assets/battlebot-demo.mov" />
+            Your browser does not support HTML5 video.
+          </video>
+        </div>
+      </section>
+
+      <section id="contact" class="contact page-section">
+        <div class="contact-content">
+          <p class="eyebrow">Let us connect</p>
+          <h2>Have an idea?<br />Send me a note.</h2>
+          <a class="email-link" href="mailto:zisuj2@gmail.com"
+            >zisuj2@gmail.com</a
+          >
+          <div class="social-links" aria-label="Social media links">
+            <a href="https://github.com/zzangzs" aria-label="GitHub profile">
+              <span class="social-icon icon-github" aria-hidden="true"></span>
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/zisu-jiang"
+              aria-label="LinkedIn profile"
+            >
+              <span class="social-icon icon-linkedin" aria-hidden="true"></span>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <p>&copy; <span id="current-year"></span> Zisu Jiang</p>
+        <a class="nav-link" href="#home">Back to top &#8593;</a>
+      </div>
+    </footer>
+
+    <div
+      class="modal"
+      id="modal-one"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-one-title"
+      hidden
+    >
+      <div class="modal-card">
+        <button
+          class="modal-close"
+          type="button"
+          aria-label="Close project details"
+        >
+          &times;
+        </button>
+        <p class="project-type">C++, Python, ESP32 · Team Lead</p>
+        <h2 id="modal-one-title">Scorpion-Lift BattleBot</h2>
+        <p>
+          I built ESP32 firmware for Wi-Fi web-based robot control, including
+          PWM output for two DC motors and three servo actuators. The system
+          includes a heartbeat failsafe that stops the drive outputs within 580
+          ms of signal loss and INA219 telemetry for current and voltage
+          monitoring. The robot reached a 0.706 m/s drive speed, lifted 2 lb in
+          0.76 seconds, and ran continuously for two minutes.
+        </p>
+        <a
+          class="text-button"
+          href="assets/battlebot-lab-report.pdf"
+          target="_blank"
+          rel="noopener"
+          >View lab report &#8599;</a
+        >
+      </div>
+    </div>
+
+    <div
+      class="modal"
+      id="modal-two"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-two-title"
+      hidden
+    >
+      <div class="modal-card">
+        <button
+          class="modal-close"
+          type="button"
+          aria-label="Close project details"
+        >
+          &times;
+        </button>
+        <p class="project-type">C, ESP32, Embedded Systems · Team Leader</p>
+        <h2 id="modal-two-title">Self-Balancing Biped</h2>
+        <p>
+          I designed and programmed a two-legged self-balancing robot using an
+          ESP32 and real-time feedback control loops. I applied control systems
+          and embedded programming concepts to achieve dynamic stability and
+          developed the firmware in C using Git-based version control. The
+          project provided hands-on experience with hardware-software co-design,
+          timing analysis, and system-level validation.
+        </p>
+        <a class="text-button" href="https://github.com/zzangzs/cs431biped"
+          >View project &#8599;</a
+        >
+      </div>
+    </div>
+
+    <div
+      class="modal"
+      id="modal-three"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-three-title"
+      hidden
+    >
+      <div class="modal-card">
+        <button
+          class="modal-close"
+          type="button"
+          aria-label="Close project details"
+        >
+          &times;
+        </button>
+        <p class="project-type">SystemVerilog, VHDL · Team Leader</p>
+        <h2 id="modal-three-title">FPGA Apple ][ Reconstruction</h2>
+        <p>
+          I reconstructed the legacy Apple ][ architecture on an Intel DE10-Lite
+          FPGA by translating system-level specifications into RTL hardware. I
+          migrated the memory subsystem from off-chip SRAM to on-chip block RAM
+          to improve latency and synchronization. The project included FPGA
+          design flow, synthesis, and timing analysis.
+        </p>
+        <a
+          class="text-button"
+          href="https://github.com/zzangzs/apple2fpga_MAX10"
+          >View project &#8599;</a
+        >
+      </div>
+    </div>
+  </body>
 </html>

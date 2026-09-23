@@ -1,1 +1,349 @@
-/* Your SCSS here. */
+$blue: #2463a9;
+$light: #eeeeee;
+$dark: #222222;
+
+@mixin container {
+  width: calc(100% - 40px);
+  max-width: 1000px;
+  margin: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: $dark;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+body.modal-opened {
+  overflow: hidden;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+/* Sticky navbar that gets smaller after scrolling. */
+.navbar {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  background: white;
+  border-bottom: 1px solid #999999;
+  transition: height 0.2s;
+}
+
+.navbar.compact {
+  height: 55px;
+}
+
+.navbar.compact .nav-links a {
+  font-size: 13px;
+}
+
+.nav-content,
+.footer-content {
+  @include container;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: $blue;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-links {
+  height: 100%;
+  display: flex;
+}
+
+.nav-links a {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  color: $dark;
+  text-decoration: none;
+  transition: font-size 0.2s;
+}
+
+/* This is the reading-position indicator. */
+.nav-links a.active {
+  color: white;
+  background: $blue;
+}
+
+.section-content,
+.hero-content,
+.break-content,
+.contact-content {
+  @include container;
+}
+
+section {
+  padding: 70px 0;
+}
+
+h1 {
+  font-size: 60px;
+  animation: appear 0.8s;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+.eyebrow,
+.project-type {
+  color: $blue;
+  font-weight: bold;
+}
+
+/* This element stays vertically centered. */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+  background: $light;
+}
+
+.hero-copy {
+  max-width: 550px;
+}
+
+/* Simple three-column content. */
+.about-intro {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.profile-photo {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.info-card {
+  padding: 15px;
+  background: $light;
+  border: 1px solid #999999;
+}
+
+/* Basic carousel. */
+.projects,
+.media-section {
+  background: $light;
+}
+
+.carousel {
+  display: grid;
+  grid-template-columns: 45px minmax(0, 1fr) 45px;
+  align-items: center;
+  gap: 10px;
+}
+
+.carousel-window {
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s;
+}
+
+.project-slide {
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 25px;
+  padding: 20px;
+  background: white;
+  border: 1px solid #999999;
+}
+
+.project-visual {
+  min-height: 230px;
+  display: grid;
+  place-items: center;
+  background: #cccccc;
+  overflow: hidden;
+}
+
+.project-visual img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.carousel-button {
+  height: 45px;
+  cursor: pointer;
+}
+
+.slide-count,
+.contact,
+.work-break {
+  text-align: center;
+}
+
+.work-break {
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  color: white;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../assets/image.jpg") center / cover fixed;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 30px;
+}
+
+video {
+  width: 100%;
+  background: black;
+}
+
+.email-link {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* These SVG masks are scalable social icons made through CSS. */
+.social-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background: $dark;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+}
+
+.icon-github {
+  mask-image: url("../assets/github.svg");
+}
+
+.icon-linkedin {
+  mask-image: url("../assets/linkedin.svg");
+}
+
+footer {
+  height: 80px;
+  color: white;
+  background: $dark;
+}
+
+/* Basic modal. */
+.modal {
+  position: fixed;
+  z-index: 20;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.modal[hidden] {
+  display: none;
+}
+
+.modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  padding: 35px;
+  background: white;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Stack the large sections on smaller screens. */
+@media (max-width: 800px) {
+  .project-slide,
+  .media-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-visual {
+    min-height: 150px;
+  }
+
+  .project-visual img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo {
+    display: none;
+  }
+
+  .nav-content,
+  .nav-links {
+    justify-content: center;
+  }
+
+  .about-intro {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-break {
+    background-attachment: scroll;
+  }
+}
